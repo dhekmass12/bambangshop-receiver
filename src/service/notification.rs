@@ -92,4 +92,9 @@ impl NotificationService{
             .join().unwrap();
     }
 
+    pub fn receive_notification(payload: Notification) -> Result<Notification> {
+        let subsciber_result = NotificationRepository::add(payload);
+        return Ok(subsciber_result);
+    }
+
 }
